@@ -1,6 +1,6 @@
-# Une serie d'exo pour se remettre à jours au niveau de PHP
+# Une serie d'exo pour se remettre à jour au niveau de PHP
 
-## Vous devez git clone dans le dossier ou vous avez accès a php (**www** pour **WAMP**, **htdocs** pour **MAMP**)
+## Vous devez git clone dans le dossier où vous avez accès a php (**www** pour **WAMP**, **htdocs** pour **MAMP**)
 
 `git clone https://github.com/devglrd/A2-DW-PHP-PROCEDURAL.git`
 
