@@ -1,5 +1,5 @@
 <?php
-
+require __DIR__ . "/vendor/autoload.php";
 echo "------------------- EXO 1 ------------------- <br> <br>";
 ## Je voudrais pouvoir afficher "Je suis en cours de PHP"
 
@@ -111,6 +111,21 @@ echo "------------------- EXO 17 ------------------- <br> <br>";
 ### JE VOUDRAIS AFFICHER CHAQUE ENTREE DE MON TABLEAU $a DANS UN ELEMENT <p> HTML
 ## !TIPS : UTILISER FOREACH
 $a = ["Tomate", "Melon", "Banane", "Orange", "Fraise", "Mangue", "Poire", "Framboise"];
+
+
+echo "------------------- EXO 18 ------------------- <br> <br>";
+### Si j'execute la function inverse en lui donnant 0 en parametre, la function me renvoie une Exception, je voudrais pouvoir recuperer cette exception
+## !TIPS : UTILISER TRY CATCH EN PHP : https://www.php.net/manual/fr/language.exceptions.php
+function inverse($x)
+{
+    if (!$x) {
+        throw new Exception('Division par zéro.');
+    }
+    return 1 / $x;
+}
+
+inverse(1);
+inverse(0);
 
 
 
