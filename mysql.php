@@ -52,38 +52,28 @@ $a = "Personnage Puissant";
 $b = "203";
 
 
-echo "------------------- EXO 6 ------------------- <br> <br>";
+echo "------------------- EXO 7 ------------------- <br> <br>";
 ## RECUPERER TOUT LES PERSONNAGE DE LA TABLES PERSONNAGES ET AFFICHER POUR CHAQUE PERSONNAGE SON ATK ET SON NOM
 ## UTILISER L'OBJ PDO POUR RECUPERER LES INFORMATIONS DE LA BASE DE DONNEE
 
 
-echo "------------------- EXO 7 ------------------- <br> <br>";
+echo "------------------- EXO 8 ------------------- <br> <br>";
 ## RECUPERER TOUT LES PERSONNAGES DE LA TABLE PERSONNAGES MAIS ORDONER LES PAR ID DESCENDANT ET LES AFFICHER UN A UN EN REVENANT A LA LIGNE POUR CHAQUE
 ## UTILISER L'OBJ PDO POUR RECUPERER LES INFORMATIONS DE LA BASE DE DONNEE
 
 
-echo "------------------- EXO 8 ------------------- <br> <br>";
+echo "------------------- EXO 9 ------------------- <br> <br>";
 ## RECUPERER TOUT LES TYPES DE LA TABLE TYPES ET LES AFFICHER UN A UN EN REVENANT A LA LIGNE POUR CHAQUE
 ## UTILISER L'OBJ PDO POUR RECUPERER LES INFORMATIONS DE LA BASE DE DONNEE
 
 
-echo "------------------- EXO 9 ------------------- <br> <br>";
-## CREE UN FORMULAIRE HTML AVEC UN 3 input
-#  input type text avec le name = nom
-# input type number avec le name = atk
-# un selecteur avec comme nom = type
-
 echo "------------------- EXO 10 ------------------- <br> <br>";
 ## CREE UN FORMULAIRE HTML AVEC UN 3 input
 #  input type text avec le name = nom
 # input type number avec le name = atk
 # un selecteur avec comme nom = type
-## AJOUTER UN BOUTON VALIDER AU FORMULAIRE QUI A LE TYPE SUBMIT
-## LORSQUE L'on SOUMET LE FORMULAIRE JE VEUX QUE VOUS AFFICHIEZ CHAQUE ENTREE DE LA VARIABLE $_POST
-## !TIPS : Si vous avez oubliez ce que contient votre variable $_POST alors pensez a faire un dd($_POST) (mais pensez a require l'autoload en haut de ce fichier.)
 
-
-echo "------------------- EXO 10 ------------------- <br> <br>";
+echo "------------------- EXO 11 ------------------- <br> <br>";
 ## CREE UN FORMULAIRE HTML AVEC UN 3 input
 #  input type text avec le name = nom
 # input type number avec le name = atk
@@ -92,15 +82,19 @@ echo "------------------- EXO 10 ------------------- <br> <br>";
 ## LORSQUE L'on SOUMET LE FORMULAIRE JE VEUX QUE VOUS AFFICHIEZ CHAQUE ENTREE DE LA VARIABLE $_POST
 ## !TIPS : Si vous avez oubliez ce que contient votre variable $_POST alors pensez a faire un dd($_POST) (mais pensez a require l'autoload en haut de ce fichier.)
 
-echo "------------------- EXO 10 ------------------- <br> <br>";
-## REPRENDRE LE FORMULAIRE FAIT AU DESSUS ET AU NIVEAU DU SELECTEUR
+
+echo "------------------- EXO 12 ------------------- <br> <br>";
+## REPRENDRE LE FORMULAIRE FAIT AU DESSUS, AU NIVEAU DU SELECTEUR FAIRE UN FOREACH POUR AFFICHER DANS LE SELECTEUR TOUT LES TYPES DISPONIBLE DANS LA BASE DE DONNEES
 //<body>
 //<select name="" id="">
 //    <option value="value1">Valeur 1</option>
 //</select>
 //</body>
-# ET FAIT UN FOREACH POUR AFFICHER DANS LE SELECTEUR TOUT LES TYPES DISPONIBLE DANS LA BASE DE DONNEES
 
+
+echo "------------------- EXO 12 ------------------- <br> <br>";
+## REPRENDRE LE FORMULAIRE FAIT AU DESSUS, ET ENREGISTRER UNE ENTREE DANS LA TABLE PERSONNAGE AVEC LES INFORMATION RECUPERER DANS LE FORMULAIRE HTML
+## JE VEUX ASSOCIEZ LA VALEUR DU SELCECT A LA COLLUMN type_id dans la table PERSONNAGE
 
 
 

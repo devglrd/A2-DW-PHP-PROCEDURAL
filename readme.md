@@ -16,3 +16,6 @@
 ### Ensuite le fichier mysql.php
 Écrivez le code en dessous des commentaires.
  
+### Ensuite le fichier fight.php
+Écrivez le code en dessous des commentaires.
+  
