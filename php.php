@@ -1,5 +1,5 @@
 <?php
-require __DIR__ . "/vendor/autoload.php";
+
 echo "------------------- EXO 1 ------------------- <br> <br>";
 ## Je voudrais pouvoir afficher "Je suis en cours de PHP"
 
@@ -10,33 +10,39 @@ $a = 31;
 
 
 echo "------------------- EXO 2 ------------------- <br> <br>";
-### JE VOUDRAIS AFFICHER AFFICHER LA TAILLE DE LA STRING QUE CONTIENT $a;
+### JE VOUDRAIS AFFICHER LA TAILLE DE LA STRING QUE CONTIENT $a;
 $a = "anticonstitutionnellement";
 
 
 echo "------------------- EXO 3 ------------------- <br> <br>";
-### JE VOUDRAIS AFFICHER AFFICHER CHAQUE ENTREE DE LA VARIABLE $a;
+### JE VOUDRAIS AFFICHER CHAQUE ENTREE DE LA VARIABLE $a;
 ## SEULEMENT JE VOUDRAIS FAIRE UN SAUT DE LIT APRES CHAQUE ENTREE;
 $a = ["Tomate", "Melon", "Banane", "Orange"];
 
 
 echo "------------------- EXO 4 ------------------- <br> <br>";
-### JE VOUDRAIS AFFICHER AFFICHER CHAQUE ENTREE DE LA VARIABLE $a;
+### JE VOUDRAIS AFFICHER CHAQUE ENTREE DE LA VARIABLE $a;
 ## JE VOUDRAIS AFFICHER LA CLE DU TABLEAU AVANT DAFFICHER LENTREE DU TABLEAU
 ## !TIPS regarder la propierete *key* de la fonction foreach
 $a = ["Tomate", "Melon", "Banane", "Orange"];
 
 
 echo "------------------- EXO 5 ------------------- <br> <br>";
-### JE VOUDRAIS AFFICHER AFFICHER CHAQUE ENTREE DE LA VARIABLE $a;
+### JE VOUDRAIS AFFICHER CHAQUE ENTREE DE LA VARIABLE $a;
 ### MAIS SEULEMENT SI LA TAILLE DE LA STRING FAIT PLUS DE 6 ET EN REVENANT A LA LIGNE A CHAQUE FOIS
 $a = ["Tomate", "Melon", "Banane", "Orange", "Fraise", "Mangue", "Poire", "Framboise"];
 
 
 echo "------------------- EXO 6 ------------------- <br> <br>";
-### JE VOUDRAIS AFFICHER AFFICHER CHAQUE ENTREE DE LA VARIABLE $a;
+### JE VOUDRAIS AFFICHER CHAQUE ENTREE DE LA VARIABLE $a;
 ### MAIS SANS UTILISER _LE MOT CLE FOREACH ET EN REVENANT A LA LIGNE A CHAQUE FOIS
 $a = ["Tomate", "Melon", "Banane", "Orange", "Fraise", "Mangue", "Poire", "Framboise"];
+
+
+echo "------------------- EXO 7 ------------------- <br> <br>";
+### JE VOUDRAIS AFFICHER LA VALEUR "name" du tableau $a
+# TIPS : https://www.php.net/manual/fr/function.array.php
+$a = ["name" => "Thomas"];
 
 
 echo "------------------- EXO 7 ------------------- <br> <br>";
@@ -107,26 +113,25 @@ echo "------------------- EXO 16 ------------------- <br> <br>";
 ## je veux que vous utilisiez le SWITCH de php
 ## !TIPS : https://www.php.net/manual/fr/control-structures.switch.php
 
+
 echo "------------------- EXO 17 ------------------- <br> <br>";
-### JE VOUDRAIS AFFICHER CHAQUE ENTREE DE MON TABLEAU $a DANS UN ELEMENT <p> HTML
-## !TIPS : UTILISER FOREACH
-$a = ["Tomate", "Melon", "Banane", "Orange", "Fraise", "Mangue", "Poire", "Framboise"];
-
-
-echo "------------------- EXO 18 ------------------- <br> <br>";
-### Si j'execute la function inverse en lui donnant 0 en parametre, la function me renvoie une Exception, je voudrais pouvoir recuperer cette exception
+### Si j'execute la function inverse en lui donnant 0 en parametre, la function me renvoie une Exception, je voudrais pouvoir recuperer cette exception et l'afficher
 ## !TIPS : UTILISER TRY CATCH EN PHP : https://www.php.net/manual/fr/language.exceptions.php
 function inverse($x)
 {
     if (!$x) {
         throw new Exception('Division par zéro.');
     }
+    
     return 1 / $x;
 }
 
 inverse(1);
 inverse(0);
 
+echo "------------------- EXO 18 ------------------- <br> <br>";
+## JE VEUX AFFICHER LE USER AGENT DU CLIENT ET LE HOST DU SERVEUR
+## TIPS : https://www.php.net/manual/fr/reserved.variables.server.php
 
 
 

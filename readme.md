@@ -6,13 +6,16 @@
 `git clone https://github.com/devglrd/A2-DW-PHP-PROCEDURAL.git`
 
 ### Ensuite ouvrez le **dossier** *A2-DW-PHP-PROCEDURAL* dans **PHPSTORM** **(ouvrez tout le dossier dans phpstorm)**
-#### Pour les mac vous pouvez utiliser la command php -S localhost:8083 ./php.php pour executer un serveur php. puis rendez vous sur http://localhost:8083/
+#### Pour les **mac** vous pouvez utiliser la command php -S localhost:8083 ./php.php pour executer un serveur php. puis rendez vous sur http://localhost:8083/
 
 
-### Commencez par le fichier **php.php**
+### Commencez le fichier **composer.php**
 Écrivez le code en dessous des commentaires.
 
-### Ensuite le fichier **composer.php**
+### Ensuite par le fichier **php.php**
+Écrivez le code en dessous des commentaires.
+
+### Ensuite le fichier **html.php**
 Écrivez le code en dessous des commentaires.
 
 ### Ensuite le fichier **mysql.php**

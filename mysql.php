@@ -7,7 +7,12 @@ echo "------------------- EXO 1 ------------------- <br> <br>";
 # - MAMP => user : root | mdp : root
 # - WAMP => user : root | mdp :
 
-$pdo = new PDO();
+//$pdo = new PDO();
+
+echo "------------------- EXO 2 ------------------- <br> <br>";
+## Je voudrais pouvoir me connecter a ma base de donnée
+## Mais que vous regardiez si un erreur c'est produite lors de la connexion, et si il y a un erreur l'afficher
+## TIPS : https://www.developpez.net/forums/anocode.php?id=2beaa3cf20b92207f29d6472137a4691
 
 
 echo "------------------- EXO 2 ------------------- <br> <br>";
@@ -85,12 +90,14 @@ echo "------------------- EXO 11 ------------------- <br> <br>";
 
 echo "------------------- EXO 12 ------------------- <br> <br>";
 ## REPRENDRE LE FORMULAIRE FAIT AU DESSUS, AU NIVEAU DU SELECTEUR FAIRE UN FOREACH POUR AFFICHER DANS LE SELECTEUR TOUT LES TYPES DISPONIBLE DANS LA BASE DE DONNEES
-//<body>
-//<select name="" id="">
-//    <option value="value1">Valeur 1</option>
-//</select>
-//</body>
+?>
 
+<body>
+<select name="" id="">
+    <option value="value1">Valeur 1</option>
+</select>
+</body>
+<?php
 
 echo "------------------- EXO 12 ------------------- <br> <br>";
 ## REPRENDRE LE FORMULAIRE FAIT AU DESSUS, ET ENREGISTRER UNE ENTREE DANS LA TABLE PERSONNAGE AVEC LES INFORMATION RECUPERER DANS LE FORMULAIRE HTML
