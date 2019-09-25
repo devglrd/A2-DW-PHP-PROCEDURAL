@@ -1,23 +1,31 @@
 <?php
-
+require __DIR__ . '/vendor/autoload.php';
 echo "------------------- EXO 1 ------------------- <br> <br>";
 ## Je voudrais pouvoir afficher "Je suis en cours de PHP"
-
+echo "Je suis en cours de PHP";
 
 echo "------------------- EXO 2 ------------------- <br> <br>";
 ### JE VOUDRAIS AFFICHER "PLUS" si $a est superieure a 30;
 $a = 31;
-
+if ($a > 30) {
+    echo "PLUS";
+}
 
 echo "------------------- EXO 2 ------------------- <br> <br>";
 ### JE VOUDRAIS AFFICHER LA TAILLE DE LA STRING QUE CONTIENT $a;
 $a = "anticonstitutionnellement";
 
+echo strlen($a);
 
 echo "------------------- EXO 3 ------------------- <br> <br>";
 ### JE VOUDRAIS AFFICHER CHAQUE ENTREE DE LA VARIABLE $a;
 ## SEULEMENT JE VOUDRAIS FAIRE UN SAUT DE LIT APRES CHAQUE ENTREE;
 $a = ["Tomate", "Melon", "Banane", "Orange"];
+
+foreach ($a as $item) {
+    echo $item;
+    echo "<br> <br>";
+}
 
 
 echo "------------------- EXO 4 ------------------- <br> <br>";
@@ -26,38 +34,57 @@ echo "------------------- EXO 4 ------------------- <br> <br>";
 ## !TIPS regarder la propierete *key* de la fonction foreach
 $a = ["Tomate", "Melon", "Banane", "Orange"];
 
+foreach ($a as $key => $item) {
+    echo "clé : $key, valeur : $item";
+    echo "<br> <br>";
+}
 
 echo "------------------- EXO 5 ------------------- <br> <br>";
 ### JE VOUDRAIS AFFICHER CHAQUE ENTREE DE LA VARIABLE $a;
 ### MAIS SEULEMENT SI LA TAILLE DE LA STRING FAIT PLUS DE 6 ET EN REVENANT A LA LIGNE A CHAQUE FOIS
 $a = ["Tomate", "Melon", "Banane", "Orange", "Fraise", "Mangue", "Poire", "Framboise"];
 
+foreach ($a as $item) {
+    if (strlen($item) > 6) {
+        echo $item;
+        echo "<br>";
+    }
+}
 
 echo "------------------- EXO 6 ------------------- <br> <br>";
 ### JE VOUDRAIS AFFICHER CHAQUE ENTREE DE LA VARIABLE $a;
 ### MAIS SANS UTILISER _LE MOT CLE FOREACH ET EN REVENANT A LA LIGNE A CHAQUE FOIS
 $a = ["Tomate", "Melon", "Banane", "Orange", "Fraise", "Mangue", "Poire", "Framboise"];
+for ($i = 0; $i < count($a); $i++) {
+    echo $a[ $i ];
+    echo "<br>";
+}
+echo implode($a, " <br> ");
+
+
+$i = 0;
+while ($i < count($a)) {
+    echo $a[ $i ];
+    $i++;
+}
 
 
 echo "------------------- EXO 7 ------------------- <br> <br>";
 ### JE VOUDRAIS AFFICHER LA VALEUR "name" du tableau $a
 # TIPS : https://www.php.net/manual/fr/function.array.php
 $a = ["name" => "Thomas"];
-
+echo $a["name"];
 
 echo "------------------- EXO 7 ------------------- <br> <br>";
 ### JE VOUDRAIS AFFICHER LA PHRASE "Je suis à L"iim" EN UTILISANT LA VARIABLE $a DANS LA STRING;
 $a = "IIM";
+echo "je suis a l'" . $a;
 
 
 echo "------------------- EXO 8 ------------------- <br> <br>";
 ### JE VOUDRAIS REMPLACER "GOOGLE" PAR "AMAZON" DANS LA VARIABLE $a ET AFFICHER LA VARIABLE $a
 $a = "GOOGLE est la plus grande entreprise du monde";
-
-
-echo "------------------- EXO 8 ------------------- <br> <br>";
-### JE VOUDRAIS REMPLACER "GOOGLE" PAR "AMAZON" DANS LA VARIABLE $a ET AFFICHER LA VARIABLE $a
-$a = "GOOGLE est la plus grande entreprise du monde";
+echo str_replace("GOOGLE", "AMAZON", $a);
 
 
 echo "------------------- EXO 9 ------------------- <br> <br>";
@@ -65,6 +92,8 @@ echo "------------------- EXO 9 ------------------- <br> <br>";
 ## !TIPS : CHERCHER LES CONDITIONS *TERNAIRES* EN PHP
 $a = "PHP";
 
+$a = ($a === "PHP") ? "TERNAIRE" : "FAUX";
+echo $a;
 
 echo "------------------- EXO 10 ------------------- <br> <br>";
 ### JE VOUDRAIS EXECUTER LA FUNCTION HELLO
@@ -130,10 +159,17 @@ inverse(1);
 inverse(0);
 
 echo "------------------- EXO 18 ------------------- <br> <br>";
-## JE VEUX AFFICHER LE USER AGENT DU CLIENT ET LE HOST DU SERVEUR
-## TIPS : https://www.php.net/manual/fr/reserved.variables.server.php
+## JAI DEUX VARIABLES $a et $b
+## JE VEUX EXECUTER UNE FONCTION QUI AFFECTERA A $a LA VALEUR DE $b ET$b LA VALEUR DE $a
+## CETTE FUNCTION SAPPEL MY_SWAP
+function my_swap($a, $b)
+{
 
+}
 
+$a = 10;
+$b = 20;
+my_swap($a, $b);
 
 
 
