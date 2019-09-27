@@ -24,57 +24,59 @@ $query->execute();
 $allPerso = $query->fetchAll(PDO::FETCH_OBJ);
 
 if (!empty($_POST)) {
-    $perso1 = $_POST['perso1'];
-    $perso2 = $_POST['perso2'];
-    $dbPerso1 = getPerso($perso1, $pdo);
-    $dbPerso2 = getPerso($perso2, $pdo);
+    $idPerso1 = $_POST['perso1'];
+    $idPerso2 = $_POST['perso2'];
+    // RECUPERER LES INFO DE PERSO 1 ET PERSO2
+    $dbPerso1 = getPerso($idPerso1, $pdo);
+    $dbPerso2 = getPerso($idPerso2, $pdo);
+    // SOUSTRAIRE LES ATK DE PERSO2 AU PV DE PERSO1
+    // SOUSTRAIRE LES ATK DE PERSO1 AU PV DE PERSO2
+    
     $pvPerso1 = $dbPerso1->pv - $dbPerso2->atk;
     $pvPerso2 = $dbPerso2->pv - $dbPerso1->atk;
     
-    $newPerso1 = updatePerso($perso1, $pvPerso1, $pdo);
-    $newPerso2 = updatePerso($perso2, $pvPerso2, $pdo);
+    $newPerso1 = updatePvPerso($idPerso1, $pvPerso1, $pdo);
+    $newPerso2 = updatePvPerso($idPerso2, $pvPerso2, $pdo);
     
-    echo $newPerso2->name . " à perdu " . $dbPerso1->atk . " pv il a donc actuellement " . $newPerso2->pv . "PV <br>";
-    echo $newPerso1->name . " à perdu " . $dbPerso2->atk . " pv il a donc actuellement " . $newPerso1->pv . "PV <br>";
+    
+    echo $newPerso1->name . "a perdu " . $newPerso2->atk . "PV <br> il lui reste " . $newPerso1->pv . " PV <br>";
+    echo $newPerso2->name . "a perdu " . $newPerso1->atk . "PV <br> il lui reste " . $newPerso2->pv . " PV <br>";
     
 }
 
-function updatePerso($idPerso, $pvPerson, $pdo)
+function updatePvPerso($id, $pv, $pdo)
 {
     $query = $pdo->prepare("UPDATE personnages SET pv = :newPv WHERE id = :id");
-    $query->execute(["id" => $idPerso, 'newPv' => $pvPerson]);
-    $a = $query->fetch(PDO::FETCH_OBJ);
-    $perso = getPerso($idPerso, $pdo);
+    $query->execute(["newPv" => $pv, "id" => $id]);
+    $state = $query->fetch(PDO::FETCH_OBJ);
     
-    return $perso;
+    return getPerso($id, $pdo);
 }
 
 function getPerso($id, $pdo)
 {
     $query = $pdo->prepare("SELECT * FROM personnages WHERE id = :id");
-    $query->execute(["id" => $id]);
-    $a = $query->fetch(PDO::FETCH_OBJ);
+    $query->execute(['id' => $id]);
     
-    return $a;
+    return $query->fetch(PDO::FETCH_OBJ);
 }
 
 ?>
-
 <form action="" method="POST">
     <select name="perso1" id="">
-        <option value="" selected disabled>Choissisez le perso 1</option>
-        <?php foreach ($allPerso as $perso) { ?>
-            <option value="<?= $perso->id ?>"><?= $perso->name ?> </option>
+        <option value="" disabled selected>Choissisez votre personnage</option>
+        <?php foreach ($allPerso as $item) { ?>
+            <option value="<?= $item->id ?>">
+                <?= $item->name ?>
+            </option>
         <?php } ?>
     </select>
-
     <select name="perso2" id="">
-        <option value="" selected disabled>Choissisez le perso 2</option>
-        <?php foreach ($allPerso as $perso) { ?>
-            <option value="<?= $perso->id ?>"><?= $perso->name ?> </option>
+        <option value="" disabled selected>Choissisez votre personnage</option>
+        <?php foreach ($allPerso as $item) { ?>
+            <option value="<?= $item->id ?>"><?= $item->name ?></option>
         <?php } ?>
     </select>
 
     <button type="submit">Fight</button>
-
 </form>

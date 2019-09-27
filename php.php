@@ -102,6 +102,9 @@ function hello()
     echo "Halo";
 }
 
+hello();
+
+
 echo "------------------- EXO 11 ------------------- <br> <br>";
 ### JE VOUDRAIS EXECUTER LA FUNCTION HELLO2 ET RECUPERER LE RESULTAT DE LA FONCTION DANS UNE VARIABLE $a ET ENSUITE AFFICHER $a
 function hello2()
@@ -109,28 +112,51 @@ function hello2()
     return "Halo";
 }
 
+$a = hello2();
+
 echo "------------------- EXO 12 ------------------- <br> <br>";
 ### JE VOUDRAIS AFFICHER UNE PHRASE AVEC TOUTES LES ENTREES DU TABLES $a AVEC UN ESPACE ENTRE CHAQUE MOT;
 $a = ["Le", "PHP", "c", "'", 'est', 'super'];
+
+echo implode($a, " ");
+foreach ($a as $item) {
+    echo $item;
+}
 
 
 echo "------------------- EXO 13 ------------------- <br> <br>";
 ### JE VOUDRAIS RECUPERER UN TABLEAU DEPUIS LA STRING $a;
 $a = "Le PHP c'est trop bien";
 
+$a = explode(" ", $a);
+var_dump($a);
 
 echo "------------------- EXO 14 ------------------- <br> <br>";
 ### JE VOUDRAIS EXECUTER LA FUNCTION DISPLAY QUI AFFICHER L'ARGUMENT PASSER A LA FUNCTION
 ## ATTENTION VOUS DEVEZ CREE LA FUNCTION DISPLAY
 
-#display("Display");
+function display($string)
+{
+    echo $string;
+}
+
+display("Toto");
 
 
 echo "------------------- EXO 15 ------------------- <br> <br>";
 ### JE VOUDRAIS EXECUTER LA FUNCTION AVERAGE QUI FERAS LA MOYENNE DU TABLEAU PASSER EN PARAMETRE
 #TIPS : chercher la function array_sum() sur la doc de PHP
 
-#average([2, 2, 4]);
+function average($array)
+{
+    if (!empty($array))
+        return array_sum($array) / count($array);
+    
+    return false;
+}
+
+$a = average([]);
+echo $a;
 
 
 echo "------------------- EXO 16 ------------------- <br> <br>";
@@ -141,6 +167,21 @@ echo "------------------- EXO 16 ------------------- <br> <br>";
 # SI AUCUN DES CAS ALORS AFFICHER = "Aucune des posibilités"
 ## je veux que vous utilisiez le SWITCH de php
 ## !TIPS : https://www.php.net/manual/fr/control-structures.switch.php
+$a = 1;
+switch ($a) {
+    case $a === 1:
+        echo "i === 1";
+        break;
+    case $a === 2:
+        echo "i === 2";
+        break;
+    case $a === 3:
+        echo "i === 3";
+        break;
+    default:
+        echo "Aucun";
+        break;
+}
 
 
 echo "------------------- EXO 17 ------------------- <br> <br>";
@@ -155,8 +196,12 @@ function inverse($x)
     return 1 / $x;
 }
 
-inverse(1);
-inverse(0);
+try {
+    echo inverse(0);
+} catch (Exception $toto) {
+    echo $toto->getMessage();
+}
+
 
 echo "------------------- EXO 18 ------------------- <br> <br>";
 ## JAI DEUX VARIABLES $a et $b
@@ -164,12 +209,17 @@ echo "------------------- EXO 18 ------------------- <br> <br>";
 ## CETTE FUNCTION SAPPEL MY_SWAP
 function my_swap($a, $b)
 {
-
+    $temp = $a;
+    $a = $b;
+    $b = $temp;
+    
+    return [$a, $b];
 }
 
 $a = 10;
 $b = 20;
-my_swap($a, $b);
+$newVar = my_swap($a, $b);
+dd($newVar);
 
 
 
